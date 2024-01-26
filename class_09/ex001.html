@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Introdução ao DOM</title>
+		<style>
+			body {
+				background-color: rgb(255, 218, 185);
+				font: normal 18pt Arial;
+			}
+		</style>
+	</head>
+	<body>
+        <h1>Iniciando estudos com DOM</h1>
+        <div id="imagem">Aqui vai a imagem</div>
+        <br>
+		<p>Aqui vai o resultado:</p>
+		<p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+		<div id="msg" onclick="mudarTextoDiv()">Clique em mim</div>
+		<br />
+
+		<script>
+			var p1 = document.getElementsByTagName("p")[1];
+			window.document.write(
+				'Está escrito assim: "' + p1.innerHTML + '"' + `<br>`
+			);
+			// o innerText pega apenas o texto, enquanto o innerHTML pega tudo o que tiver escrito, inclusive as tags
+			p1.style.textDecoration = "underline";
+
+			var p3 = `<br> Testando os últimos aprendizados de <strong>JavaScript</strong>.`;
+			document.write(p3);
+
+            var div = document.getElementById('msg')
+            div.style.cursor =  'pointer'
+            div.style.fontWeight = 'bold' 
+            function mudarTextoDiv() {
+                div.innerText = 'Olá, Mundo!'
+            }
+            
+            var imagem = document.querySelector('div#imagem')
+            imagem.innerHTML = `<img src="https://th.bing.com/th/id/OIP.uzhVxfP5YBjCNqYPmfBKxgHaFM?rs=1&pid=ImgDetMain" width="300">`
+		</script>
+	</body>
+</html>
