@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; }
+        form { max-width: 25rem; }
+        div#res { 
+            background-color: lightgray; 
+            border-radius: .3rem;
+            box-shadow: 1px 1px 1px gray;
+            max-width: 24rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preencha o seguinte formulário:</h1>
+    <form action="" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <br>
+            <div>
+                <label for="inome">Nome: </label>
+                <input type="text" name="nome" id="inome">
+            </div>
+            <br>
+            <div>
+                <label for="isobrenome">Sobrenome: </label>
+                <input type="text" name="sobrenome" id="isobrenome">
+            </div>
+            <br>
+            <div>
+                <label for="iestado">Estado: </label>
+                <input type="text" name="estado" id="iestado" required>
+            </div>
+            <br>    
+            <div>  
+                <label for="icivil">Estado Civil: </label>
+                <input type="radio" name="civil" id="icivil">Solteiro(a)
+                <input type="radio" name="civil" id="icivil">Casado(a)
+            </div>
+            <br>
+        </fieldset>
+        <br>
+        <div>
+            <input type="reset" value="Limpar">
+            <input type="button" value="Enviar" id="botao">
+        </div>
+    </form>
+    <br>
+    <div id="res"></div>
+    <script>
+        const botao = document.querySelector('input#botao')
+        botao.addEventListener('click', avisar)
+        
+        function avisar() {
+            const nome = document.querySelector('input#inome')  
+            const estado = document.querySelector('input#iestado')     
+            const res = document.querySelector('div#res')
+
+            if (estado.value == 'São Paulo' || estado.value == 'Rio de Janeiro') {
+                res.innerHTML = `Olá ${nome.value}! Encaminhamos para você um e-mail com mais detalhes!`
+                res.style.padding = '.6rem'
+            } else {
+                res.innerHTML = `Olá ${nome.value}! Infelizmente esse cadastro é para apenas residentes dos estados de <strong>São Paulo</strong> ou <strong>Rio de Janeiro</strong>.`
+                res.style.color = 'darkred'
+                res.style.padding = '.6rem'
+            }
+        }
+    </script>
+</body>
+</html>
