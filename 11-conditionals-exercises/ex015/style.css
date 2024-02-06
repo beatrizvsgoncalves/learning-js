@@ -1,6 +1,8 @@
 body {
-    background-color: rgb(75, 145, 255);
+    display: flex;
+    flex-direction: column;
     font: normal 18pt Arial;
+    height: 100vh;
     text-align: center;
 }
 
@@ -14,8 +16,8 @@ section {
     box-shadow: 5px 5px 10px #00000030;
     color: #000;
     margin: auto;
-    padding: .9rem;
     max-width: 25rem;
+    padding: .9rem;
 }
 
 img {
@@ -25,4 +27,5 @@ img {
 footer {
     color: #fff;
     font-style: italic;
+    margin-top: auto;
 }
