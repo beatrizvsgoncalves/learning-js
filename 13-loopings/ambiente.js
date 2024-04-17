@@ -4,21 +4,15 @@ while (contWhile <= 5) {
     contWhile++ // contWhile = contWhile + 1
 }
 
-//--------------
-
 var contDo = 6
 do { 
     console.log(`Passo - ${contDo}`);
     contDo++
 } while (contDo <= 10)
 
-//--------------
-
 for (var contFor = 11; contFor <= 15; contFor++) {
     console.log(`Passo - ${contFor}`);
 }
-
-//--------------
 
 /*
     console.log("Passo - 1")
