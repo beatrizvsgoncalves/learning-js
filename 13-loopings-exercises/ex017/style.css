@@ -30,7 +30,7 @@ section {
     max-width: 40rem;
 }
 
-div#configs {
+div#dados {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;

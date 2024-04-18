@@ -1,15 +1,36 @@
-const botao = document.querySelector("input#botao").addEventListener("click", contar)
+const botao = document.querySelector("input#botao")
+botao.addEventListener("click", contar)
 
 function contar() {
-    var inicio = document.querySelector("input#inicio").value
-    var fim = document.querySelector("input#fim").value
-    var passo = document.querySelector("input#passo").value
-    var msg = document.querySelector("div#msg")
+    let inicio = document.querySelector("input#txti")
+    let fim = document.querySelector("input#txtf")
+    let passo = document.querySelector("input#txtp")
+    let msg = document.querySelector("div#msg")
     
-    while (inicio <= fim) {
-        inicio + passo
-        console.log(inicio)
-    }
+    if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+        msg.innerHTML = 'Impossível contar!'
+    } else {
+        msg.innerHTML = 'Contando: <br>'
+        let i = Number(inicio.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value)
 
-    msg.innerHTML = `Contando:`
+        if (p <= 0) {
+            window.alert('Passo inválido! Considerando PASSO 1')
+            p = 1
+        }
+
+        if (i < f) {
+            // Contagem crescente
+            for (let cont = i; cont <= f; cont += p) {
+                msg.innerHTML += `${cont} \u{1F449}`
+            }
+        } else {
+            // Contagem regressiva 
+            for (let cont = i; cont >= f; cont -= p) {
+                msg.innerHTML += `${cont} \u{1F449}`
+            }
+        }
+        msg.innerHTML += `\u{1F3C1}`
+    }
 }
