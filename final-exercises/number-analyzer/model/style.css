@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: rgb(75, 145, 255);
+    font: normal 18pt Arial;
+
+    height: 98vh;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+}
+
+section {
+    background-color: #fff;
+    border-radius: .8rem;
+    box-shadow: 5px 5px 10px #00000030;
+    color: #000;
+    margin: auto;
+    padding: 1rem;
+    max-width: 35rem;
+}
+
+select#lista {
+    margin-top: 1rem;
+    height: 10rem;
+    width: 15rem;
+}
+
+div#container-dados {
+    display: flex;
+    flex-direction: column;
+}
+
+#botao-finalizar {
+    width: 15rem;
+} 
+
+footer {
+    color: #fff;
+    font-style: italic;
+    margin-top: 1.5rem;
+    text-align: center;
+}
